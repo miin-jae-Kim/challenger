@@ -13,4 +13,19 @@ data class Challenge(
     val recruitEndAt: LocalDateTime,
     val maxParticipantCount: Int,
     val paymentAmount: Int,
-)
+) {
+    companion object {
+        fun of(challengeEntity: ChallengeEntity): Challenge =
+            Challenge(
+                id = challengeEntity.id,
+                title = challengeEntity.title,
+                type = challengeEntity.type,
+                startAt = challengeEntity.startAt,
+                endAt = challengeEntity.endAt,
+                recruitStartAt = challengeEntity.recruitStartAt,
+                recruitEndAt = challengeEntity.recruitEndAt,
+                maxParticipantCount = challengeEntity.maxParticipantCount,
+                paymentAmount = challengeEntity.paymentAmount
+            )
+    }
+}
