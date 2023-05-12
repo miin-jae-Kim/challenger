@@ -2,8 +2,9 @@ package com.example.challenger.repository
 
 import com.example.challenger.entity.Challenge
 import com.example.challenger.entity.ChallengeEntity
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 
-interface ChallengeRepository {
-    fun findById(challengeId: Long): ChallengeEntity?
-    fun create(challenge: Challenge): ChallengeEntity
+@Repository
+interface ChallengeRepository: JpaRepository<ChallengeEntity, Long> {
 }

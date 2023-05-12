@@ -11,7 +11,7 @@ import jakarta.persistence.Id
 import java.time.LocalDateTime
 
 @Entity(name = "challenges")
-data class ChallengeEntity(
+class ChallengeEntity(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
 
