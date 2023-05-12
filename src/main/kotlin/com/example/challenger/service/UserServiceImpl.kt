@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 @Service
 class UserServiceImpl(
     private val userRepository: UserRepository
-): UserService {
+) : UserService {
     override fun getById(userId: Long): User {
         val user = userRepository.findById(userId) ?: throw UserNotFoundException()
         return User(

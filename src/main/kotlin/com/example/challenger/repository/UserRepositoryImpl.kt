@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 @Repository
 class UserRepositoryImpl(
     private val em: EntityManager
-): UserRepository {
+) : UserRepository {
     override fun findById(userId: Long): UserEntity? =
         em.find(UserEntity::class.java, userId)
 }
